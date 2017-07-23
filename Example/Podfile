@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'MapManager_Example' do
+  pod 'MapManager', :path => '../'
+
+  target 'MapManager_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
