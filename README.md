@@ -1,6 +1,5 @@
 # MapManager
 
-[![CI Status](http://img.shields.io/travis/Henrique Morbin/MapManager.svg?style=flat)](https://travis-ci.org/Henrique Morbin/MapManager)
 [![Version](https://img.shields.io/cocoapods/v/MapManager.svg?style=flat)](http://cocoapods.org/pods/MapManager)
 [![License](https://img.shields.io/cocoapods/l/MapManager.svg?style=flat)](http://cocoapods.org/pods/MapManager)
 [![Platform](https://img.shields.io/cocoapods/p/MapManager.svg?style=flat)](http://cocoapods.org/pods/MapManager)
