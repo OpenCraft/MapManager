@@ -1,0 +1,16 @@
+PODS:
+  - MapManager (0.1.0)
+
+DEPENDENCIES:
+  - MapManager (from `../`)
+
+EXTERNAL SOURCES:
+  MapManager:
+    :path: ../
+
+SPEC CHECKSUMS:
+  MapManager: aaa6c23ea61ab3b3c4b5e8fc2e97934d9bd97bf9
+
+PODFILE CHECKSUM: 13754b62c4597c1af7f2801f1def0668fe1f181a
+
+COCOAPODS: 1.2.1
