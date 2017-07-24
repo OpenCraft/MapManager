@@ -26,6 +26,7 @@ class ViewController: UIViewController {
         super.viewDidAppear(animated)
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            
             let pin = MapPin(at: self.map.centerCoordinate)
                 .setImage(#imageLiteral(resourceName: "starkIcon"), offSet: .centerBottom)
                 .setDidSelect { _, _, annotationView in

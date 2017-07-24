@@ -19,6 +19,20 @@ it, simply add the following line to your Podfile:
 pod "MapManager"
 ```
 
+## Usage
+
+```swift
+let pin = MapPin(at: map.centerCoordinate)
+    .setImage(pinIcon, offSet: .centerBottom)
+    .setDidSelect { _, _, annotationView in
+        annotationView.transform = CGAffineTransform(scaleX: 1.5, y: 1.5)
+    }.setDidDeselect { _, _, annotationView in
+        annotationView.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
+}
+
+map.addPin(pin)
+```
+
 ## Author
 
 Henrique Morbin, morbin_@hotmail.com
