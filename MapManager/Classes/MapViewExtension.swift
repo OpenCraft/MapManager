@@ -31,7 +31,8 @@ public extension MKMapView {
         mapManagerInstance.removePin(pinToRemove)
     }
     
-    public func removeAll() {
+    public
+    func removeAll() {
         mapManagerInstance.removeAll()
     }
 }

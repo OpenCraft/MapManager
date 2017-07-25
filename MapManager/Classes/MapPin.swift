@@ -1,7 +1,7 @@
 import UIKit
 import MapKit
 
-public class MapPin: NSObject {
+open class MapPin: NSObject {
     
     public typealias Selection = (MapPin, MKMapView, MKAnnotationView) -> Void
     
@@ -21,20 +21,20 @@ public class MapPin: NSObject {
     // MARK: Methods
     
     @discardableResult
-    public func setImage(_ image: UIImage, offSet: OffSet = .center) -> MapPin {
+    open func setImage(_ image: UIImage, offSet: OffSet = .center) -> MapPin {
         _image = image
         _imageOffset = offSet.point(basedOn: image.size)
         return self
     }
     
     @discardableResult
-    public func setDidSelect(_ didSelect: @escaping Selection) -> MapPin {
+    open func setDidSelect(_ didSelect: @escaping Selection) -> MapPin {
         _didSelect = didSelect
         return self
     }
     
     @discardableResult
-    public func setDidDeselect(_ didDeselect: @escaping Selection) -> MapPin {
+    open func setDidDeselect(_ didDeselect: @escaping Selection) -> MapPin {
         _didDeselect = didDeselect
         return self
     }
@@ -67,7 +67,7 @@ extension MapPin {
 // MARK: - MKAnnotation
 
 extension MapPin: MKAnnotation {
-    public var coordinate: CLLocationCoordinate2D {
+    open var coordinate: CLLocationCoordinate2D {
         return _coordinate
     }
 }
