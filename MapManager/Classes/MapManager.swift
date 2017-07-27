@@ -7,6 +7,7 @@ open class MapManager: NSObject {
     
     fileprivate let map: MKMapView
     open private(set) var pins = [MapPin]()
+    internal var delegate: MKMapViewDelegate?
     
     // MARK: Init
     
@@ -40,6 +41,10 @@ open class MapManager: NSObject {
         pins.removeAll()
         map.removeAnnotations(map.annotations)
     }
+    
+    open func setMapViewDelegate(_ delegate: MKMapViewDelegate?) {
+        self.delegate = delegate
+    }
 }
 
 extension MapManager: MKMapViewDelegate {
@@ -65,5 +70,21 @@ extension MapManager: MKMapViewDelegate {
         if let pin = view.annotation as? MapPin {
             pin._didDeselect?(pin, mapView, view)
         }
+    }
+    
+    public func mapViewDidFinishLoadingMap(_ mapView: MKMapView) {
+        delegate?.mapViewDidFinishLoadingMap?(mapView)
+    }
+    
+    public func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
+        delegate?.mapView?(mapView, regionDidChangeAnimated: animated)
+    }
+    
+    public func mapView(_ mapView: MKMapView, regionWillChangeAnimated animated: Bool) {
+        delegate?.mapView?(mapView, regionDidChangeAnimated: animated)
+    }
+    
+    public func mapView(_ mapView: MKMapView, didUpdate userLocation: MKUserLocation) {
+        delegate?.mapView?(mapView, didUpdate: userLocation)
     }
 }
